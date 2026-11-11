@@ -70,7 +70,7 @@ def calculate_friction_factor(Re, D, epsilon):
         return 64 / Re
 
     # Turbulent flow: Swamee-Jain explicit approximation of Colebrook
-    f_turbulent = 0.25 / math.log10(epsilon / (3.7 * D) + (5.74 / Re*0.9))** 2
+    f_turbulent = 0.25 / math.log10(epsilon / (3.7 * D) + 5.74 / (Re**0.9))**2
 
     # Transitional flow: smooth blend between laminar and turbulent values
     if Re < 4000:
